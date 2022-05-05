@@ -32,6 +32,11 @@ struct SurveyView: View {
                 .ignoresSafeArea()
             
             VStack {
+                Image("EarlyAlertSkinny")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 130)
+                    
                 VStack(alignment: .leading) {
                     Text("Radius: ")
                         .foregroundColor(.white)
@@ -78,21 +83,31 @@ struct SurveyView: View {
                         .textInputAutocapitalization(.never)
                         .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
                 }
-                .padding(.horizontal)
+                .padding([.top, .leading, .trailing])
                 
+                Spacer()
                 Button {
                     calculateCancer()
                 } label: {
                     Text("Calculate")
                 }
+                .padding(.vertical, 20.0)
+                .font( .title)
+                .tint(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .controlSize(.regular)
                 .alert(alertTitle, isPresented: $showingAlert) {
                     Button("OK") {}
                 } message: {
                     Text(alertMessage)
                 }
+                Spacer()
 
             }
+            
         }
+        
     }
     
     func calculateCancer() {
@@ -101,8 +116,9 @@ struct SurveyView: View {
             let model = try CancerCalculator(configuration: config)
             
             let prediction = try model.prediction(mean_radius: radius, mean_texture: texture, mean_perimeter: perimeter, mean_area: area, mean_smoothness: smoothness)
+            let percentage = Int(prediction.diagnosis * 100.0)
             alertTitle = "Chance of Cancer: "
-            alertMessage = String(prediction.diagnosis)
+            alertMessage = "\(percentage)%"
         } catch {
             alertTitle = "Error"
             alertMessage = "There was an error calculating probability of Cancer."
