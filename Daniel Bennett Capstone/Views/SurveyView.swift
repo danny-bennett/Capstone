@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SurveyView: View {
     
+    @EnvironmentObject var characteristics: MassCharacteristics
+    
+    
     
     @State var radius: Double
     @State var texture: Double
@@ -18,6 +21,8 @@ struct SurveyView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
+    
+    
     
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()

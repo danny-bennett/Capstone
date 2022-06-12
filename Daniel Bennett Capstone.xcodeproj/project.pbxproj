@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130EF63F2855B81C00C0D3D4 /* MassCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130EF63E2855B81C00C0D3D4 /* MassCharacteristics.swift */; };
+		130EF6412855B93D00C0D3D4 /* MassCharacteristicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130EF6402855B93D00C0D3D4 /* MassCharacteristicsModel.swift */; };
 		13121DD7281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13121DD6281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift */; };
 		13121DD9281E33C60060FA66 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13121DD8281E33C60060FA66 /* LoginView.swift */; };
 		13121DDB281E33CC0060FA66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13121DDA281E33CC0060FA66 /* Assets.xcassets */; };
 		13121DDE281E33CC0060FA66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13121DDD281E33CC0060FA66 /* Preview Assets.xcassets */; };
 		13121DE5281E3CC40060FA66 /* CancerCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 13121DE4281E3CC40060FA66 /* CancerCalculator.mlmodel */; };
 		131984832822199F006E6B8C /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131984822822199F006E6B8C /* SurveyView.swift */; };
+		1339BE1C2855A2AB001F841A /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1339BE1B2855A2AB001F841A /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130EF63E2855B81C00C0D3D4 /* MassCharacteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassCharacteristics.swift; sourceTree = "<group>"; };
+		130EF6402855B93D00C0D3D4 /* MassCharacteristicsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassCharacteristicsModel.swift; sourceTree = "<group>"; };
 		13121DD3281E33C60060FA66 /* Daniel Bennett Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daniel Bennett Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13121DD6281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daniel_Bennett_CapstoneApp.swift; sourceTree = "<group>"; };
 		13121DD8281E33C60060FA66 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -23,6 +28,7 @@
 		13121DDD281E33CC0060FA66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		13121DE4281E3CC40060FA66 /* CancerCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CancerCalculator.mlmodel; sourceTree = "<group>"; };
 		131984822822199F006E6B8C /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
+		1339BE1B2855A2AB001F841A /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130EF63B2855B78D00C0D3D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1339BE1B2855A2AB001F841A /* ResultsView.swift */,
+				131984822822199F006E6B8C /* SurveyView.swift */,
+				13121DD8281E33C60060FA66 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		130EF63C2855B7B400C0D3D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				130EF63E2855B81C00C0D3D4 /* MassCharacteristics.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		130EF63D2855B7C200C0D3D4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				130EF6402855B93D00C0D3D4 /* MassCharacteristicsModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		13121DCA281E33C50060FA66 = {
 			isa = PBXGroup;
 			children = (
@@ -55,10 +87,11 @@
 		13121DD5281E33C60060FA66 /* Daniel Bennett Capstone */ = {
 			isa = PBXGroup;
 			children = (
-				13121DE4281E3CC40060FA66 /* CancerCalculator.mlmodel */,
-				131984822822199F006E6B8C /* SurveyView.swift */,
 				13121DD6281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift */,
-				13121DD8281E33C60060FA66 /* LoginView.swift */,
+				130EF63B2855B78D00C0D3D4 /* Views */,
+				130EF63C2855B7B400C0D3D4 /* Models */,
+				130EF63D2855B7C200C0D3D4 /* ViewModels */,
+				13121DE4281E3CC40060FA66 /* CancerCalculator.mlmodel */,
 				13121DDA281E33CC0060FA66 /* Assets.xcassets */,
 				13121DDC281E33CC0060FA66 /* Preview Content */,
 			);
@@ -145,8 +178,11 @@
 			files = (
 				131984832822199F006E6B8C /* SurveyView.swift in Sources */,
 				13121DD9281E33C60060FA66 /* LoginView.swift in Sources */,
+				130EF63F2855B81C00C0D3D4 /* MassCharacteristics.swift in Sources */,
 				13121DD7281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift in Sources */,
+				1339BE1C2855A2AB001F841A /* ResultsView.swift in Sources */,
 				13121DE5281E3CC40060FA66 /* CancerCalculator.mlmodel in Sources */,
+				130EF6412855B93D00C0D3D4 /* MassCharacteristicsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
