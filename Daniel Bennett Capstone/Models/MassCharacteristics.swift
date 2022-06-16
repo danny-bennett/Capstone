@@ -7,11 +7,11 @@
 
 import Foundation
 
-class MassCharacteristics: ObservableObject {
-    var radius: Double = 0
-    var texture: Double = 0
-    var perimeter: Double = 0
-    var area: Double = 0
-    var smoothness: Double = 0
-   @Published var chance: Double = 0
+struct MassCharacteristics {
+    var radius: Double
+    var texture: Double
+    var perimeter: Double
+    var area: Double
+    var smoothness: Double
+    var chance: Int
 }

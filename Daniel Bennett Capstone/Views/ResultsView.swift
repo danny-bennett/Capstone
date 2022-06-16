@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct ResultsView: View {
+    
+    
+    @State private var showChartView = false
+    var patient: MassCharacteristics
     var body: some View {
+       
         ZStack {
             Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628)
                 .ignoresSafeArea()
@@ -26,22 +31,32 @@ struct ResultsView: View {
                     .font(.title2)
                     .padding()
                 
-                Text("34%")
+                Text("\(patient.chance)%")
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
                     .multilineTextAlignment(.center)
                     .font(.largeTitle)
                     .padding()
-                    
-                Text("This mass is considered low risk.")
-                    .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
-                    .multilineTextAlignment(.center)
-                    .font(.title2)
-                    .padding()
+                
+                if patient.chance >= 50 {
+                    Text("This mass is considered high risk.")
+                        .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                        .multilineTextAlignment(.center)
+                        .font(.title2)
+                        .padding()
+                } else {
+                    Text("This mass is considered low risk.")
+                        .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                        .multilineTextAlignment(.center)
+                        .font(.title2)
+                        .padding()
+                }
+                
                 
                 Spacer()
                 
                 Button {
+                    showChartView = true
                     
                 } label: {
                     Text("See the Data Visually    ")
@@ -52,7 +67,9 @@ struct ResultsView: View {
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
                 .controlSize(.regular)
-                
+                .sheet(isPresented: $showChartView) {
+                    ChartView()
+                }
                 Spacer()
                 
                 
@@ -63,7 +80,8 @@ struct ResultsView: View {
 }
 
 struct ResultsView_Previews: PreviewProvider {
+    static let resultsPreview = MassCharacteristics(radius: 0, texture: 0, perimeter: 0, area: 0, smoothness: 0, chance: 15)
     static var previews: some View {
-        ResultsView()
+        ResultsView(patient: resultsPreview)
     }
 }

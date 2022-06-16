@@ -14,6 +14,7 @@ struct LoginView: View {
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
+    @State private var showingAlert = false
     
     
     var body: some View {
@@ -63,11 +64,14 @@ struct LoginView: View {
                     Spacer()
                     
                     Button("Sign up") {
-                        
+                        showingAlert = true
+                    }
+                    .alert("Please contact your IT department to sign up.", isPresented: $showingAlert) {
+                        Button("OK", role: .cancel) {}
                     }
                     .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
                     
-                    NavigationLink(destination: SurveyView(radius: 0, texture: 0, perimeter: 0, area: 0, smoothness: 0), isActive: $showingLoginScreen){}
+                    NavigationLink(destination: SurveyView(radius: 0, texture: 0, perimeter: 0, area: 0, smoothness: 0, percentage: 0, wrongPercentage: 0), isActive: $showingLoginScreen){}
                        
                     
                 }

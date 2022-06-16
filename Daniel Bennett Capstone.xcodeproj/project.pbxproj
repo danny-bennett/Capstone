@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		130EF63F2855B81C00C0D3D4 /* MassCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130EF63E2855B81C00C0D3D4 /* MassCharacteristics.swift */; };
 		130EF6412855B93D00C0D3D4 /* MassCharacteristicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130EF6402855B93D00C0D3D4 /* MassCharacteristicsModel.swift */; };
+		130EF643285A4DB700C0D3D4 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130EF642285A4DB600C0D3D4 /* ChartView.swift */; };
+		130EF646285A9C0100C0D3D4 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 130EF645285A9C0100C0D3D4 /* SwiftUICharts */; };
 		13121DD7281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13121DD6281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift */; };
 		13121DD9281E33C60060FA66 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13121DD8281E33C60060FA66 /* LoginView.swift */; };
 		13121DDB281E33CC0060FA66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13121DDA281E33CC0060FA66 /* Assets.xcassets */; };
@@ -21,6 +23,7 @@
 /* Begin PBXFileReference section */
 		130EF63E2855B81C00C0D3D4 /* MassCharacteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassCharacteristics.swift; sourceTree = "<group>"; };
 		130EF6402855B93D00C0D3D4 /* MassCharacteristicsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassCharacteristicsModel.swift; sourceTree = "<group>"; };
+		130EF642285A4DB600C0D3D4 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		13121DD3281E33C60060FA66 /* Daniel Bennett Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daniel Bennett Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13121DD6281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daniel_Bennett_CapstoneApp.swift; sourceTree = "<group>"; };
 		13121DD8281E33C60060FA66 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130EF646285A9C0100C0D3D4 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +52,7 @@
 				1339BE1B2855A2AB001F841A /* ResultsView.swift */,
 				131984822822199F006E6B8C /* SurveyView.swift */,
 				13121DD8281E33C60060FA66 /* LoginView.swift */,
+				130EF642285A4DB600C0D3D4 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,6 +127,9 @@
 			dependencies = (
 			);
 			name = "Daniel Bennett Capstone";
+			packageProductDependencies = (
+				130EF645285A9C0100C0D3D4 /* SwiftUICharts */,
+			);
 			productName = "Daniel Bennett Capstone";
 			productReference = 13121DD3281E33C60060FA66 /* Daniel Bennett Capstone.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 13121DCA281E33C50060FA66;
+			packageReferences = (
+				130EF644285A9C0100C0D3D4 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 13121DD4281E33C60060FA66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,6 +194,7 @@
 				1339BE1C2855A2AB001F841A /* ResultsView.swift in Sources */,
 				13121DE5281E3CC40060FA66 /* CancerCalculator.mlmodel in Sources */,
 				130EF6412855B93D00C0D3D4 /* MassCharacteristicsModel.swift in Sources */,
+				130EF643285A4DB700C0D3D4 /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +399,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		130EF644285A9C0100C0D3D4 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		130EF645285A9C0100C0D3D4 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 130EF644285A9C0100C0D3D4 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 13121DCB281E33C50060FA66 /* Project object */;
 }
