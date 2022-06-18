@@ -10,13 +10,14 @@ import SwiftUICharts
 
 struct ChartView: View {
     
+    var patient: MassCharacteristics
     
     var body: some View {
         TabView {
             
             VStack {
                 LineChartView(data: [2,5,13,6,10], title: "Line Chart", form: ChartForm.extraLarge)
-                Text("Your score blah blah blah")
+                Text("Radius: \(patient.radius)")
                     .padding()
                     .foregroundColor(Color.white)
                     .font(.title)
@@ -57,6 +58,6 @@ struct ChartView: View {
 
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartView()
+        ChartView(patient: MassCharacteristics(radius: 0, texture: 0, perimeter: 0, area: 0, smoothness: 0, chance: 0))
     }
 }

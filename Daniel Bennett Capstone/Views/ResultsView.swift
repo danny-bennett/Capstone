@@ -59,7 +59,7 @@ struct ResultsView: View {
                     showChartView = true
                     
                 } label: {
-                    Text("See the Data Visually    ")
+                    Text("See the Data Visually")
                 }
                 .padding(.vertical, 20.0)
                 .font( .title)
@@ -68,7 +68,7 @@ struct ResultsView: View {
                 .buttonBorderShape(.capsule)
                 .controlSize(.regular)
                 .sheet(isPresented: $showChartView) {
-                    ChartView()
+                    ChartView(patient: MassCharacteristics(radius: patient.radius, texture: patient.texture, perimeter: patient.perimeter, area: patient.area, smoothness: patient.smoothness, chance: patient.chance))
                 }
                 Spacer()
                 

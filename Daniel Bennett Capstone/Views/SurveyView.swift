@@ -51,7 +51,7 @@ struct SurveyView: View {
                     VStack(alignment: .leading) {
                         Text("Radius: ")
                             .foregroundColor(.white)
-                        TextField("", value: $radius, formatter: formatter)
+                        TextField("", value: $characteristicsForResultsView.radius, formatter: formatter)
                             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                             .border(.secondary)
                             .disableAutocorrection(true)
@@ -60,7 +60,7 @@ struct SurveyView: View {
                         
                         Text("Texture: ")
                             .foregroundColor(.white)
-                        TextField("", value: $texture, formatter: formatter)
+                        TextField("", value: $characteristicsForResultsView.texture, formatter: formatter)
                             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                             .border(.secondary)
                             .disableAutocorrection(true)
@@ -69,7 +69,7 @@ struct SurveyView: View {
                             
                         Text("Perimeter: ")
                             .foregroundColor(.white)
-                        TextField("", value: $perimeter, formatter: formatter)
+                        TextField("", value: $characteristicsForResultsView.perimeter, formatter: formatter)
                             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                             .border(.secondary)
                             .disableAutocorrection(true)
@@ -78,7 +78,7 @@ struct SurveyView: View {
                         
                         Text("Area: ")
                             .foregroundColor(.white)
-                        TextField("", value: $area, formatter: formatter)
+                        TextField("", value: $characteristicsForResultsView.area, formatter: formatter)
                             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                             .border(.secondary)
                             .disableAutocorrection(true)
@@ -87,7 +87,7 @@ struct SurveyView: View {
                         
                         Text("Smoothness: ")
                             .foregroundColor(.white)
-                        TextField("", value: $smoothness, formatter: formatter)
+                        TextField("", value: $characteristicsForResultsView.smoothness, formatter: formatter)
                             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                             .border(.secondary)
                             .disableAutocorrection(true)
