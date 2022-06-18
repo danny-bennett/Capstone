@@ -16,35 +16,44 @@ struct ChartView: View {
         TabView {
             
             VStack {
-                LineChartView(data: [2,5,13,6,10], title: "Line Chart", form: ChartForm.extraLarge)
-                Text("Radius: \(patient.radius)")
-                    .padding()
+                LineChartView(data: [7,13,93,99], title: "Chance of cancerous mass by Perimeter", form: ChartForm.extraLarge)
+                Text("This graph shows how the likelihood of a cancerous mass increases with the radius of the mass. \n\n 0-50 : 7% \n 50 - 100 : 13% \n 100-150 : 93% \n 150-200 : 99% \n\n The mass in question has a perimeter of \(patient.perimeter, specifier: "%.2f").")
+                    .multilineTextAlignment(.center)
                     .foregroundColor(Color.white)
-                    .font(.title)
+                    .font(.title2)
+                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                Text("Based on our data.")
+                    .foregroundColor(Color.white)
+                
             }
                 
                 
             
             VStack {
                 BarChartView(data: ChartData(values: [
-                   ("Test", 12),
-                   ("Test2", 3),
-                   ("Test3", 5),
-               ("Test4", 15)]), title: "Bar Graph", form: ChartForm.extraLarge)
+                   ("Cancerous", 2000),
+                   ("Benign", 1000),
+                   ("Mass In Question", patient.area),]), title: "Average Area ", form: ChartForm.extraLarge)
                 
-                Text("Your score blah blah blah")
-                    .padding()
+                Text("The average area of a cancerous mass is 2000. \n\n The average area of a benign mass is 1000. \n\n The mass in question has an area of \(patient.area, specifier: "%.2f").")
+                    .multilineTextAlignment(.center)
                     .foregroundColor(Color.white)
-                    .font(.title)
+                    .font(.title2)
+                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                Text("Based on our data.")
+                    .foregroundColor(Color.white)
             }
             
             VStack {
                 PieChartView(data: [40, 60], title: "Pie Chart", form: ChartForm.extraLarge)
                 
-                Text("Your score blah blah blah")
-                    .padding()
+                Text("When the radius of a mass is greater than 14, there is a 60% chance that the mass is cancerous. \n\n The mass in question has a radius of \(patient.radius, specifier: "%.2f").")
+                    .multilineTextAlignment(.center)
                     .foregroundColor(Color.white)
-                    .font(.title)
+                    .font(.title2)
+                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                Text("Based on our data.")
+                    .foregroundColor(Color.white)
             }
             
         }
