@@ -49,50 +49,37 @@ struct SurveyView: View {
                         .frame(width: 200, height: 130)
                         
                     VStack(alignment: .leading) {
-                        Text("Radius: ")
-                            .foregroundColor(.white)
-                        TextField("", value: $characteristicsForResultsView.radius, formatter: formatter)
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            .border(.secondary)
-                            .disableAutocorrection(true)
-                            .textInputAutocapitalization(.never)
-                            .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
                         
-                        Text("Texture: ")
+                        Text("Radius: \(characteristicsForResultsView.radius, specifier: "%.2f")")
                             .foregroundColor(.white)
-                        TextField("", value: $characteristicsForResultsView.texture, formatter: formatter)
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            .border(.secondary)
-                            .disableAutocorrection(true)
-                            .textInputAutocapitalization(.never)
-                            .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
-                            
-                        Text("Perimeter: ")
-                            .foregroundColor(.white)
-                        TextField("", value: $characteristicsForResultsView.perimeter, formatter: formatter)
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            .border(.secondary)
-                            .disableAutocorrection(true)
-                            .textInputAutocapitalization(.never)
-                            .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                            .padding(.top)
+                        Slider(value: $characteristicsForResultsView.radius, in: 0...30)
+                            .accentColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+//
                         
-                        Text("Area: ")
+                        Text("Texture: \(characteristicsForResultsView.texture, specifier: "%.2f") ")
                             .foregroundColor(.white)
-                        TextField("", value: $characteristicsForResultsView.area, formatter: formatter)
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            .border(.secondary)
-                            .disableAutocorrection(true)
-                            .textInputAutocapitalization(.never)
-                            .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                            .padding(.top)
+                        Slider(value: $characteristicsForResultsView.texture, in: 0...40)
+                            .accentColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+//
+                        Text("Perimeter: \(characteristicsForResultsView.perimeter, specifier: "%.2f") ")
+                            .foregroundColor(.white)
+                            .padding(.top)
+                        Slider(value: $characteristicsForResultsView.perimeter, in: 0...200)
+                            .accentColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
                         
-                        Text("Smoothness: ")
+                        Text("Area: \(characteristicsForResultsView.area, specifier: "%.2f") ")
                             .foregroundColor(.white)
-                        TextField("", value: $characteristicsForResultsView.smoothness, formatter: formatter)
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            .border(.secondary)
-                            .disableAutocorrection(true)
-                            .textInputAutocapitalization(.never)
-                            .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                            .padding(.top)
+                        Slider(value: $characteristicsForResultsView.area, in: 0...2600)
+                            .accentColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                        
+                        Text("Smoothness: \(characteristicsForResultsView.smoothness, specifier: "%.2f") ")
+                            .foregroundColor(.white)
+                            .padding(.top)
+                        Slider(value: $characteristicsForResultsView.smoothness, in: 0...1)
+                            .accentColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
                     }
                     .padding([.top, .leading, .trailing])
                     
@@ -148,9 +135,9 @@ struct SurveyView: View {
             let config = MLModelConfiguration()
             let model = try CancerCalculator(configuration: config)
             
-            let prediction = try model.prediction(mean_radius: radius, mean_texture: texture, mean_perimeter: perimeter, mean_area: area, mean_smoothness: smoothness)
+            let prediction = try model.prediction(mean_radius: characteristicsForResultsView.radius, mean_texture: characteristicsForResultsView.texture, mean_perimeter: characteristicsForResultsView.perimeter, mean_area: characteristicsForResultsView.area, mean_smoothness: characteristicsForResultsView.smoothness)
             wrongPercentage = Int(prediction.diagnosis * 100.0)
-            percentage = abs(wrongPercentage - 100)
+            percentage = 100 - wrongPercentage
             
             
             //alertTitle = "Chance of Cancer: "
