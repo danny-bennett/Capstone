@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SurveyView: View {
     
-
+    
     
     @State var radius: Double
     @State var texture: Double
@@ -22,6 +22,7 @@ struct SurveyView: View {
     @State private var alertMessage = ""
     @State private var showingAlert = false
     @State private var showResultView = false
+    @State private var showLoginView = false
     
     
     
@@ -38,16 +39,41 @@ struct SurveyView: View {
         
         
         
+        NavigationView {
             ZStack {
                 Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628)
                     .ignoresSafeArea()
                 
+                
+                
                 VStack {
+                    HStack {
+                        Spacer()
+                        Button {
+                            showLoginView = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "arrow.down.left.circle.fill")
+                                    .foregroundColor(Color.white)
+                                Text("Sign Out")
+                                    .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                            }
+                        }
+                    }
+                    .padding(.trailing)
+                    
+                    NavigationLink(destination: LoginView(), isActive: $showLoginView){}
+                    
+                    
                     Image("EarlyAlertSkinny")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 130)
-                        
+                        .padding(.top)
+                    
+                    
+                    
+                    
                     VStack(alignment: .leading) {
                         
                         Text("Radius: \(characteristicsForResultsView.radius, specifier: "%.2f")")
@@ -55,14 +81,14 @@ struct SurveyView: View {
                             .padding(.top)
                         Slider(value: $characteristicsForResultsView.radius, in: 0...30)
                             .accentColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
-//
+                        //
                         
                         Text("Texture: \(characteristicsForResultsView.texture, specifier: "%.2f") ")
                             .foregroundColor(.white)
                             .padding(.top)
                         Slider(value: $characteristicsForResultsView.texture, in: 0...40)
                             .accentColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
-//
+                        //
                         Text("Perimeter: \(characteristicsForResultsView.perimeter, specifier: "%.2f") ")
                             .foregroundColor(.white)
                             .padding(.top)
@@ -114,17 +140,28 @@ struct SurveyView: View {
                     
                     
                     Spacer()
-
-                   
-                        
                     
                     
-                   
+                    
+                    
+                    
+                    
                 }
+                .navigationBarHidden(true)
+                
                 
             }
+            .navigationBarHidden(true)
+            
+            
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         
+    }
+        
+    
+    
     
     
     func calculateCancer() -> Int {
@@ -150,7 +187,9 @@ struct SurveyView: View {
         //showingAlert = true
         
     }
+    
 }
+
 
 struct SurveyView_Previews: PreviewProvider {
     static var previews: some View {

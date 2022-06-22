@@ -29,8 +29,9 @@ struct LoginView: View {
                     VStack(alignment: .leading){
                         Text("Username: ")
                         TextField("", text: $username)
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            .border(.secondary)
+                            .textFieldStyle(.roundedBorder)
+                            .padding(/*@START_MENU_TOKEN@*/[.leading, .bottom, .trailing]/*@END_MENU_TOKEN@*/)
+                            .font(Font.system(size: 30))
                             .disableAutocorrection(true)
                             .textInputAutocapitalization(.never)
                             .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
@@ -38,8 +39,9 @@ struct LoginView: View {
                             
                         Text("password: ")
                         SecureField("", text: $password)
-                            .padding(.all)
-                            .border(.secondary)
+                            .textFieldStyle(.roundedBorder)
+                            .padding(/*@START_MENU_TOKEN@*/[.leading, .bottom, .trailing]/*@END_MENU_TOKEN@*/)
+                            .font(Font.system(size: 30))
                             .disableAutocorrection(true)
                             .textInputAutocapitalization(.never)
                             .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
@@ -79,6 +81,8 @@ struct LoginView: View {
             .background(Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628))
             .navigationBarHidden(true)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
         
     }
         
