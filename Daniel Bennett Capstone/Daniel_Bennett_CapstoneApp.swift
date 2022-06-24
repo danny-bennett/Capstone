@@ -17,6 +17,7 @@ struct Daniel_Bennett_CapstoneApp: App {
     var body: some Scene {
         WindowGroup {
             LoginView()
+                .accentColor(.white)
         }
     }
 }

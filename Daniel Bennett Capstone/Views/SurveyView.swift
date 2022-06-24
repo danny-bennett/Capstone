@@ -60,7 +60,7 @@ struct SurveyView: View {
                             }
                         }
                     }
-                    .padding(.trailing)
+                    .padding()
                     
                     NavigationLink(destination: LoginView(), isActive: $showLoginView){}
                     
@@ -132,9 +132,11 @@ struct SurveyView: View {
                     } message: {
                         Text(alertMessage)
                     }
-                    .sheet(isPresented: $showResultView) {
-                        ResultsView(patient: characteristicsForResultsView)
-                    }
+//                    .sheet(isPresented: $showResultView) {
+//                        ResultsView(patient: characteristicsForResultsView)
+//                    }
+                    
+                    NavigationLink(destination: ResultsView(patient: characteristicsForResultsView), isActive: $showResultView){}
                     
                     
                     
@@ -175,6 +177,11 @@ struct SurveyView: View {
             let prediction = try model.prediction(mean_radius: characteristicsForResultsView.radius, mean_texture: characteristicsForResultsView.texture, mean_perimeter: characteristicsForResultsView.perimeter, mean_area: characteristicsForResultsView.area, mean_smoothness: characteristicsForResultsView.smoothness)
             wrongPercentage = Int(prediction.diagnosis * 100.0)
             percentage = 100 - wrongPercentage
+            if percentage > 100 {
+                percentage = 100
+            } else if percentage < 0 {
+                percentage = 0
+            }
             
             
             //alertTitle = "Chance of Cancer: "
