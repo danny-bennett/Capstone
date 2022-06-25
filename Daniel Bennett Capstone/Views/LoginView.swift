@@ -80,7 +80,7 @@ struct LoginView: View {
                     
                     NavigationLink(destination: SurveyView(radius: 0, texture: 0, perimeter: 0, area: 0, smoothness: 0, percentage: 0, wrongPercentage: 0), isActive: $showingLoginScreen){}
                        
-                    
+                    Spacer()
                 }
             }
             .background(Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628))
