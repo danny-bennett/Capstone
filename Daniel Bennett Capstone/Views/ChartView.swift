@@ -15,6 +15,9 @@ struct ChartView: View {
     
     var body: some View {
         
+        ZStack {
+            Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628).ignoresSafeArea()
+            
             TabView {
                 
                 VStack {
@@ -30,7 +33,7 @@ struct ChartView: View {
                     
                     Spacer()
                 }
-
+                
                 VStack {
                     
                     BarChartView(data: ChartData(values: [
@@ -49,36 +52,25 @@ struct ChartView: View {
                 }
                 
                 VStack {
-          
+                    
                     PieChartView(data: [22, 78], title: "Radius of Mass Greater than 14", form: ChartForm.extraLarge)
                     
                     Text("When the radius of a mass is greater than 14, there is a 78% chance that the mass is cancerous. \n\n The mass in question has a radius of \(patient.radius, specifier: "%.2f").")
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color.white)
                         .font(.title3)
-                        .padding(/*@START_MENU_TOKEN@*/.bottom, 40.0/*@END_MENU_TOKEN@*/)
+                        .padding()
                     Text("Based on our data.")
                         .foregroundColor(Color.white)
                     
                     Spacer()
                 }
-       
+                
             }
-            .background(Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628))
-            .ignoresSafeArea()
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            //.navigationBarHidden(true)
-            //.navigationBarTitle("")
-            
-            Spacer()
         }
-        
-        
-        
-    
-    
-    
+    }
 }
 
 struct ChartView_Previews: PreviewProvider {

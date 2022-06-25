@@ -14,95 +14,77 @@ struct ResultsView: View {
     @State private var showSurveyView = false
     var patient: MassCharacteristics
     var body: some View {
-       
-        NavigationView {
-            ZStack {
-                Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628)
-                    .ignoresSafeArea()
-                VStack {
-                    VStack {
-//                        Button {
-//                            showSurveyView = true
-//                        } label: {
-//                            HStack {
-//                                Image(systemName: "arrowshape.turn.up.backward")
-//                                    .foregroundColor(Color.white)
-//                                Text("Back")
-//                                    .foregroundColor(Color.white)
-//                                Spacer()
-//
-//                            }
-//                            .padding([.leading, .top])
-//                    }
-                        NavigationLink(destination: SurveyView(radius: patient.radius, texture: patient.texture, perimeter: patient.perimeter, area: patient.area, smoothness: patient.smoothness, percentage: patient.chance, wrongPercentage: patient.chance), isActive: $showSurveyView){}
-                    }
-                    Spacer()
-                    Image("EarlyAlertSkinny")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 130)
-                    Spacer()
-                    
-                    Text("The chance of this mass being cancerous is:")
+        
+        
+        ZStack {
+            Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628)
+                .ignoresSafeArea()
+            VStack {
+                
+              
+                Image("EarlyAlertSkinny")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 130)
+                Spacer()
+                
+                Text("The chance of this mass being cancerous is:")
+                    .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                    .multilineTextAlignment(.center)
+                    .font(.title2)
+                    .padding()
+                
+                Text("\(patient.chance)%")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                    .multilineTextAlignment(.center)
+                    .font(.largeTitle)
+                    .padding()
+                
+                if patient.chance >= 50 {
+                    Text("This mass is considered high risk.")
                         .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
                         .multilineTextAlignment(.center)
                         .font(.title2)
                         .padding()
-                    
-                    Text("\(patient.chance)%")
-                        .fontWeight(.bold)
+                } else {
+                    Text("This mass is considered low risk.")
                         .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
                         .multilineTextAlignment(.center)
-                        .font(.largeTitle)
+                        .font(.title2)
                         .padding()
+                }
+                
+                
+                Spacer()
+                
+                Button {
+                    showChartView = true
                     
-                    if patient.chance >= 50 {
-                        Text("This mass is considered high risk.")
-                            .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
-                            .multilineTextAlignment(.center)
-                            .font(.title2)
-                            .padding()
-                    } else {
-                        Text("This mass is considered low risk.")
-                            .foregroundColor(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
-                            .multilineTextAlignment(.center)
-                            .font(.title2)
-                            .padding()
-                    }
-                    
-                    
-                    Spacer()
-                    
-                    Button {
-                        showChartView = true
-                        
-                    } label: {
-                        Text("See the Data Visually")
-                    }
-                    .padding(.vertical, 20.0)
-                    .font( .title)
-                    .tint(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.capsule)
-                    .controlSize(.regular)
-    //                .sheet(isPresented: $showChartView) {
-    //                    ChartView(patient: MassCharacteristics(radius: patient.radius, texture: patient.texture, perimeter: patient.perimeter, area: patient.area, smoothness: patient.smoothness, chance: patient.chance))
-                    
-                    
-                    
-                    }
-                    Spacer()
-                    
-                NavigationLink(destination: ChartView(patient: MassCharacteristics(radius: patient.radius, texture: patient.texture, perimeter: patient.perimeter, area: patient.area, smoothness: patient.smoothness, chance: patient.chance)), isActive: $showChartView){}
-                        
+                } label: {
+                    Text("See the Data Visually")
+                }
+                .padding(.vertical, 20.0)
+                .font( .title)
+                .tint(Color(red: 0.9647058823529412, green: 0.6823529411764706, blue: 0.5176470588235295))
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .controlSize(.regular)
+                
                 
             }
-            .navigationBarHidden(true)
-            //.navigationBarBackButtonHidden(true)
-            .foregroundColor(Color.white)
+            Spacer()
+            
+            NavigationLink(destination: ChartView(patient: MassCharacteristics(radius: patient.radius, texture: patient.texture, perimeter: patient.perimeter, area: patient.area, smoothness: patient.smoothness, chance: patient.chance)), isActive: $showChartView){}
+            
+            
         }
-        .foregroundColor(Color.white)
+        //.navigationBarHidden(true)
+        //.navigationBarBackButtonHidden(true)
+        //.foregroundColor(Color.white)
     }
+    
+    
     
 }
 

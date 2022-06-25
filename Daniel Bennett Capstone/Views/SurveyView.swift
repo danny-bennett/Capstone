@@ -39,7 +39,7 @@ struct SurveyView: View {
         
         
         
-        NavigationView {
+        
             ZStack {
                 Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628)
                     .ignoresSafeArea()
@@ -154,11 +154,11 @@ struct SurveyView: View {
                 
             }
             .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
             
-            
-        }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+        
+      
+        
         
     }
         
