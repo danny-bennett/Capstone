@@ -9,19 +9,16 @@ import SwiftUI
 
 struct ResultsView: View {
     
-    
     @State private var showChartView = false
     @State private var showSurveyView = false
     var patient: MassCharacteristics
     var body: some View {
-        
         
         ZStack {
             Color(red: 0.28627450980392155, green: 0.37254901960784315, blue: 0.6509803921568628)
                 .ignoresSafeArea()
             VStack {
                 
-              
                 Image("EarlyAlertSkinny")
                     .resizable()
                     .scaledToFit()
@@ -55,7 +52,6 @@ struct ResultsView: View {
                         .padding()
                 }
                 
-                
                 Spacer()
                 
                 Button {
@@ -70,22 +66,12 @@ struct ResultsView: View {
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
                 .controlSize(.regular)
-                
-                
             }
             Spacer()
             
             NavigationLink(destination: ChartView(patient: MassCharacteristics(radius: patient.radius, texture: patient.texture, perimeter: patient.perimeter, area: patient.area, smoothness: patient.smoothness, chance: patient.chance)), isActive: $showChartView){}
-            
-            
         }
-        //.navigationBarHidden(true)
-        //.navigationBarBackButtonHidden(true)
-        //.foregroundColor(Color.white)
     }
-    
-    
-    
 }
 
 struct ResultsView_Previews: PreviewProvider {

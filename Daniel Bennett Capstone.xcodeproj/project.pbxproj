@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		130EF63F2855B81C00C0D3D4 /* MassCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130EF63E2855B81C00C0D3D4 /* MassCharacteristics.swift */; };
-		130EF6412855B93D00C0D3D4 /* MassCharacteristicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130EF6402855B93D00C0D3D4 /* MassCharacteristicsModel.swift */; };
 		130EF643285A4DB700C0D3D4 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130EF642285A4DB600C0D3D4 /* ChartView.swift */; };
 		130EF646285A9C0100C0D3D4 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 130EF645285A9C0100C0D3D4 /* SwiftUICharts */; };
 		13121DD7281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13121DD6281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift */; };
@@ -32,9 +31,8 @@
 
 /* Begin PBXFileReference section */
 		130EF63E2855B81C00C0D3D4 /* MassCharacteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassCharacteristics.swift; sourceTree = "<group>"; };
-		130EF6402855B93D00C0D3D4 /* MassCharacteristicsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassCharacteristicsModel.swift; sourceTree = "<group>"; };
 		130EF642285A4DB600C0D3D4 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		13121DD3281E33C60060FA66 /* Daniel Bennett Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daniel Bennett Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13121DD3281E33C60060FA66 /* Early Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Early Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13121DD6281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daniel_Bennett_CapstoneApp.swift; sourceTree = "<group>"; };
 		13121DD8281E33C60060FA66 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		13121DDA281E33CC0060FA66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,14 +83,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		130EF63D2855B7C200C0D3D4 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				130EF6402855B93D00C0D3D4 /* MassCharacteristicsModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		13121DCA281E33C50060FA66 = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +94,7 @@
 		13121DD4281E33C60060FA66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13121DD3281E33C60060FA66 /* Daniel Bennett Capstone.app */,
+				13121DD3281E33C60060FA66 /* Early Alert.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,7 +105,6 @@
 				13121DD6281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift */,
 				130EF63B2855B78D00C0D3D4 /* Views */,
 				130EF63C2855B7B400C0D3D4 /* Models */,
-				130EF63D2855B7C200C0D3D4 /* ViewModels */,
 				13121DE4281E3CC40060FA66 /* CancerCalculator.mlmodel */,
 				138C54B12862B7940002D65D /* GoogleService-Info.plist */,
 				13121DDA281E33CC0060FA66 /* Assets.xcassets */,
@@ -162,7 +151,7 @@
 				138C54AE2862AEB20002D65D /* FirebaseFirestoreSwift */,
 			);
 			productName = "Daniel Bennett Capstone";
-			productReference = 13121DD3281E33C60060FA66 /* Daniel Bennett Capstone.app */;
+			productReference = 13121DD3281E33C60060FA66 /* Early Alert.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +238,6 @@
 				13121DD7281E33C60060FA66 /* Daniel_Bennett_CapstoneApp.swift in Sources */,
 				1339BE1C2855A2AB001F841A /* ResultsView.swift in Sources */,
 				13121DE5281E3CC40060FA66 /* CancerCalculator.mlmodel in Sources */,
-				130EF6412855B93D00C0D3D4 /* MassCharacteristicsModel.swift in Sources */,
 				130EF643285A4DB700C0D3D4 /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,7 +384,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "dannybennett.Daniel-Bennett-Capstone";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Early Alert";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -428,7 +416,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "dannybennett.Daniel-Bennett-Capstone";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Early Alert";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
